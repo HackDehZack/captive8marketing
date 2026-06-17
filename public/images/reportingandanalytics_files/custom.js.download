@@ -1,0 +1,56 @@
+jQuery(window).load(function(){	
+	
+	if(jQuery('.hamburger-cta-init').length > 0){
+		
+		jQuery('.hamburger-cta-init').click(function(){
+			jQuery('.contact-slideout-row').removeClass('active');
+			jQuery('.search-content-row').removeClass('active');	
+			jQuery('.mobile-slideout-row').addClass('active');	
+		});
+
+		jQuery('.mobile-slideout-close').click(function(){
+			jQuery('.mobile-slideout-row').removeClass('active');	
+		});
+	}
+	
+	if(jQuery('.landing-banner-init').length > 0){
+		jQuery('.landing-banner-init').slick({
+			infinite: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			fade: true,
+			autoplay:true,
+			autoplaySpeed:7000,
+			arrows:false,
+			dots:false,
+			pauseOnFocus:false,
+			pauseOnHover:false
+		});
+	}
+	
+	jQuery('.accordion-init').click(function(){
+	if( jQuery(this).next().is(':hidden') ) {
+	jQuery('.accordion-init').removeClass('active').next().slideUp(); 
+		jQuery(this).toggleClass('active').next().slideDown();
+	}else{
+		jQuery(this).removeClass('active').next().slideUp();
+	}
+	return false;
+	});
+	
+	if(jQuery('.quote-init').length > 0){
+		jQuery('.quote-init').slick({
+			infinite: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			fade: true,
+			autoplay:true,
+			autoplaySpeed:5000,
+			arrows:false,
+			dots:false,
+			pauseOnFocus:false,
+			pauseOnHover:false
+		});
+	}	
+	
+});
